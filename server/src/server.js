@@ -63,7 +63,7 @@ function getFeedItemSync(feedItemId) {
  */
 function getFeedData(user) {
   var userData = readDocument('users', user);
-  var feedData = readDocument('feeds', userData.feed);
+  // var feedData = readDocument('feeds', userData.feed);
   // While map takes a callback, it is synchronous,
   // not asynchronous. It calls the callback immediately.
   feedData.contents = feedData.contents.map(getFeedItemSync);
