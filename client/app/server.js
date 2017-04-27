@@ -107,7 +107,16 @@ export function postStatusUpdate(user, location, contents, cb) {
 /**
  * Adds a new comment to the database on the given feed item.
  */
+ /*FIX_THIS***********************/
 export function postComment(feedItemId, author, contents, cb) {
+  // sendXHR('POST', '/feeditem/:feedItemId', {
+  //  userId: author,
+  //  feedItemId: feedItemId,
+  //  contents: contents
+  // }, (xhr) => {
+  //  // Return the new status update.
+  //  cb(JSON.parse(xhr.responseText));
+  // });
   var feedItem = readDocument('feedItems', feedItemId);
   feedItem.comments.push({
     "author": author,
