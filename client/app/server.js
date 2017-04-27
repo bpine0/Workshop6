@@ -67,6 +67,16 @@ export function postStatusUpdate(user, location, contents, cb) {
    // Return the new status update.
    cb(JSON.parse(xhr.responseText));
  });
+
+ export function postComment(user, location, contents, cb) {
+   sendXHR('POST', '/feeditem', {
+    userId: user,
+    location: location,
+    contents: contents
+  }, (xhr) => {
+    // Return the new status update.
+    cb(JSON.parse(xhr.responseText));
+  });
   // // If we were implementing this for real on an actual server, we would check
   // // that the user ID is correct & matches the authenticated user. But since
   // // we're mocking it, we can be less strict.
